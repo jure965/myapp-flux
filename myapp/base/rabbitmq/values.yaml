@@ -1,0 +1,13 @@
+metrics:
+  enabled: false
+global:
+  rabbitmq:
+
+image:
+  debug: true
+
+livenessProbe:
+  timeoutSeconds: 60
+
+readinessProbe:
+  timeoutSeconds: 120

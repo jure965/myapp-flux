@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: rabbitmq
+spec:
+  chart:
+    spec:
+      chart: rabbitmq
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: infrastructure
+      version: "12.1.7"
+  valuesFrom:
+    - kind: ConfigMap
+      name: rabbitmq-values
+      valuesKey: values.yaml
+  interval: 5m

@@ -1,0 +1,8 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: nginx
+spec:
+  image: nginx
+  interval: 10m0s
+  provider: generic
